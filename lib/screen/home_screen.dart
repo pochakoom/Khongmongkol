@@ -46,7 +46,7 @@ class _HomeScreen extends State<HomeScreen> {
           children: <Widget>[
             IconButton(
               icon: const Icon(Icons.menu),
-              iconSize: 30,
+              iconSize: 40,
               color: Colors.white, // Change icon color
               onPressed: () {
                 print("Menu button pressed");
@@ -54,7 +54,7 @@ class _HomeScreen extends State<HomeScreen> {
             ),
             IconButton(
               icon: const Icon(Icons.home),
-              iconSize: 30,
+              iconSize: 40,
               color: Colors.white, // Change icon color
               onPressed: () {
                 print("Home button pressed");
@@ -62,7 +62,7 @@ class _HomeScreen extends State<HomeScreen> {
             ),
             IconButton(
               icon: const Icon(Icons.search),
-              iconSize: 30,
+              iconSize: 40,
               color: Colors.white, // Change icon color
               onPressed: () {
                 print("Search button pressed");
