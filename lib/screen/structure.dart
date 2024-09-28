@@ -12,8 +12,8 @@ class Structure extends StatelessWidget {
   const Structure({
     super.key,
     required this.body,
-    this.menuIconColor, // Allow customization of menu icon color
-    this.homeIconColor, // Allow customization of home icon color
+    this.menuIconColor,
+    this.homeIconColor,
     this.searchIconColor,
   });
 
@@ -61,7 +61,7 @@ class Structure extends StatelessWidget {
             IconButton(
               icon: const Icon(Icons.menu),
               iconSize: 40,
-              color: menuIconColor ?? Colors.white, // Use passed color or default to white
+              color: menuIconColor ?? Colors.white,
               onPressed: () {
                 menu(context);
               },
@@ -69,7 +69,7 @@ class Structure extends StatelessWidget {
             IconButton(
               icon: const Icon(Icons.home),
               iconSize: 40,
-              color: homeIconColor ?? Colors.white, // Use passed color for home icon
+              color: homeIconColor ?? Colors.white,
               onPressed: () {
                 home(context);
               },
