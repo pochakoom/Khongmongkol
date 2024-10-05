@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:khongmongkol/screen/home_screen.dart';
 import 'package:khongmongkol/screen/structure.dart';
+import 'package:khongmongkol/screen/gaw_screen.dart';
 
 class MenuScreen extends StatefulWidget {
   const MenuScreen({super.key});
@@ -15,7 +16,10 @@ class _MenuScreenState extends State<MenuScreen> {
   }
 
   void gaw_wallpaper() {
-    print("Give away wallpapers");
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => GawScreen()),
+    );
   }
 
   @override
@@ -44,7 +48,7 @@ class _MenuScreenState extends State<MenuScreen> {
                   Container(
                     width: 40,
                     height: 40,
-                    color: Color(0xFF8B5F32),
+                    color: const Color(0xFF8B5F32),
                     child: IconButton(
                       icon: const Icon(
                         Icons.keyboard_arrow_left,
@@ -75,7 +79,7 @@ class _MenuScreenState extends State<MenuScreen> {
                     height: 100,
                     child: Container(
                       decoration: BoxDecoration(
-                        gradient: LinearGradient(
+                        gradient: const LinearGradient(
                           colors: [
                             Color(0xFF000000),
                             Color(0xFF8B5F32)
@@ -87,6 +91,10 @@ class _MenuScreenState extends State<MenuScreen> {
                       ),
                       child: TextButton(
                         onPressed: bd_kmk,
+                        style: TextButton.styleFrom(
+                          padding: const EdgeInsets.all(10),
+                          textStyle: const TextStyle(fontSize: 18),
+                        ),
                         child: Padding(
                           padding: const EdgeInsets.only(left: 10),
                           child: Row(
@@ -114,10 +122,6 @@ class _MenuScreenState extends State<MenuScreen> {
                             ],
                           ),
                         ),
-                        style: TextButton.styleFrom(
-                          padding: EdgeInsets.all(10),
-                          textStyle: const TextStyle(fontSize: 18),
-                        ),
                       ),
                     ),
                   ),
@@ -129,7 +133,7 @@ class _MenuScreenState extends State<MenuScreen> {
                     height: 100,
                     child: Container(
                       decoration: BoxDecoration(
-                        gradient: LinearGradient(
+                        gradient: const LinearGradient(
                           colors: [
                             Color(0xFF000000),
                             Color(0xFF8B5F32)
@@ -141,6 +145,11 @@ class _MenuScreenState extends State<MenuScreen> {
                       ),
                       child: TextButton(
                         onPressed: gaw_wallpaper,
+                        style: TextButton.styleFrom(
+                          padding: const EdgeInsets.all(10), // Remove default padding
+                          textStyle:
+                              const TextStyle(fontSize: 18), // Button text size
+                        ),
                         child: Padding(
                           padding: const EdgeInsets.only(left: 10),
                           child: Row(
@@ -167,11 +176,6 @@ class _MenuScreenState extends State<MenuScreen> {
                               ),
                             ],
                           ),
-                        ),
-                        style: TextButton.styleFrom(
-                          padding: EdgeInsets.all(10), // Remove default padding
-                          textStyle:
-                              const TextStyle(fontSize: 18), // Button text size
                         ),
                       ),
                     ),

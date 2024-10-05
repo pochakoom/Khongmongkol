@@ -9,7 +9,6 @@ class DetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Fetch the item details from the itemData list
     final selectedItem = itemData.firstWhere(
       (element) => element.name == item,
       orElse: () => Item('Unknown', 'Details not found', '','','',''), // Default item if not found
@@ -41,29 +40,28 @@ class DetailsScreen extends StatelessWidget {
                       color: Colors.white,
                     ),
                     onPressed: () {
-                      Navigator.of(context).pop(); // Navigate back
+                      Navigator.of(context).pop();
                     },
                   ),
                 ),
-                const SizedBox(width: 8), // Spacing between button and text
+                const SizedBox(width: 8),
                 // Header Text
                 Expanded(
                   child: Text(
-                    selectedItem.name, // Display the item name as the header
+                    selectedItem.name,
                     style: const TextStyle(
                       fontSize: 32,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
-                    textAlign: TextAlign.center, // Center align the header
+                    textAlign: TextAlign.center,
                   ),
                 ),
               ],
             ),
-            const SizedBox(height: 16), // Space between header and detail box
-            // Detail Box with Fixed Height
+            const SizedBox(height: 16),
             Container(
-              height: 600, // Set fixed height
+              height: 600,
               padding: const EdgeInsets.all(16.0),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
@@ -83,24 +81,24 @@ class DetailsScreen extends StatelessWidget {
                     children: [
                       // Image on the left
                       ClipRRect(
-                        borderRadius: BorderRadius.circular(12), // Rounded corners for image
+                        borderRadius: BorderRadius.circular(12),
                         child: Image.asset(
-                          selectedItem.picture, // Use the picture property from the selected item
+                          selectedItem.picture,
                           height: 150,
-                          fit: BoxFit.cover, // Ensure the image covers the space
+                          fit: BoxFit.cover,
                         ),
                       ),
-                      const SizedBox(width: 16), // Space between image and text
+                      const SizedBox(width: 16),
                       Expanded(
-                        child: SingleChildScrollView( // Make the detail text scrollable
+                        child: SingleChildScrollView(
                           child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start, // Align text to the left
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                selectedItem.details, // Show the selected item's details
+                                selectedItem.details,
                                 style: const TextStyle(
                                   fontSize: 20,
-                                  color: Colors.white, // Changed to white for better contrast
+                                  color: Colors.white,
                                 ),
                               ),
                             ],
@@ -109,31 +107,30 @@ class DetailsScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 16), // Space between rows
+                  const SizedBox(height: 16),
 
                   // Second Row: First Additional Picture
                   Row(
                     children: [
-                      // Image on the left
                       ClipRRect(
-                        borderRadius: BorderRadius.circular(12), // Rounded corners for image
+                        borderRadius: BorderRadius.circular(12),
                         child: Image.asset(
-                          selectedItem.picture, // Use the picture property from the selected item
+                          selectedItem.picture,
                           height: 100,
-                          fit: BoxFit.cover, // Ensure the image covers the space
+                          fit: BoxFit.cover,
                         ),
                       ),
-                      const SizedBox(width: 16), // Space between image and text
+                      const SizedBox(width: 16),
                       Expanded(
-                        child: SingleChildScrollView( // Make the detail text scrollable
+                        child: SingleChildScrollView(
                           child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start, // Align text to the left
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                selectedItem.address1, // Show the selected item's details
+                                selectedItem.address1,
                                 style: const TextStyle(
                                   fontSize: 20,
-                                  color: Colors.white, // Changed to white for better contrast
+                                  color: Colors.white,
                                 ),
                               ),
                             ],
@@ -142,28 +139,27 @@ class DetailsScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 16), // Space between images
+                  const SizedBox(height: 16),
 
                   // Third Row: Second Additional Picture
                   Row(
                     children: [
-                      // Image on the left
                       ClipRRect(
-                        borderRadius: BorderRadius.circular(12), // Rounded corners for image
+                        borderRadius: BorderRadius.circular(12),
                         child: Image.asset(
-                          selectedItem.picture, // Use the picture property from the selected item
+                          selectedItem.picture, 
                           height: 100,
-                          fit: BoxFit.cover, // Ensure the image covers the space
+                          fit: BoxFit.cover, 
                         ),
                       ),
-                      const SizedBox(width: 16), // Space between image and text
+                      const SizedBox(width: 16), 
                       Expanded(
-                        child: SingleChildScrollView( // Make the detail text scrollable
+                        child: SingleChildScrollView( 
                           child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start, // Align text to the left
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                selectedItem.address2, // Show the selected item's details
+                                selectedItem.address2, 
                                 style: const TextStyle(
                                   fontSize: 20,
                                   color: Colors.white, // Changed to white for better contrast
@@ -180,24 +176,24 @@ class DetailsScreen extends StatelessWidget {
                     children: [
                       // Image on the left
                       ClipRRect(
-                        borderRadius: BorderRadius.circular(12), // Rounded corners for image
+                        borderRadius: BorderRadius.circular(12), 
                         child: Image.asset(
-                          selectedItem.picture, // Use the picture property from the selected item
+                          selectedItem.picture,
                           height: 100,
-                          fit: BoxFit.cover, // Ensure the image covers the space
+                          fit: BoxFit.cover, 
                         ),
                       ),
-                      const SizedBox(width: 16), // Space between image and text
+                      const SizedBox(width: 16),
                       Expanded(
-                        child: SingleChildScrollView( // Make the detail text scrollable
+                        child: SingleChildScrollView( 
                           child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start, // Align text to the left
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                selectedItem.address3, // Show the selected item's details
+                                selectedItem.address3,
                                 style: const TextStyle(
                                   fontSize: 20,
-                                  color: Colors.white, // Changed to white for better contrast
+                                  color: Colors.white,
                                 ),
                               ),
                             ],
@@ -212,7 +208,7 @@ class DetailsScreen extends StatelessWidget {
           ],
         ),
       ),
-      searchIconColor: const Color.fromARGB(255, 0, 0, 0), // Customize this as needed
+      searchIconColor: const Color.fromARGB(255, 0, 0, 0),
     );
   }
 }
