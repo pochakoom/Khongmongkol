@@ -30,6 +30,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  carousel_slider: ^5.0.0
+  shared_preferences: ^2.0.6
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -96,3 +98,87 @@ flutter:
     - assets/welcome.png
     - assets/icon_bd.png
     - assets/card.png
+    - assets/1st_home.png
+    - assets/2nd_home.png
+    - assets/1st.png
+    - assets/2nd.png
+    - assets/3rd.png
+    - assets/3rd_home.png
+    - assets/home_header.png
+    - assets/home_header2.png
+    - assets/icon_home1.png
+    - assets/icon_home2.png
+    - assets/icon_home3.png
+    - assets/banner-1.png
+    - assets/banner-2.png
+    - assets/banner-3.png
+    - assets/cover-1.png
+    - assets/cover-2.png
+    - assets/cover-3.png
+    - assets/cover-4.png
+    - assets/cover-5.png
+    - assets/cover-6.png
+    - assets/wallpaper/วอลการ์ตูน-1.jpg
+    - assets/wallpaper/วอลการ์ตูน-2.jpg
+    - assets/wallpaper/วอลการ์ตูน-3.jpg
+    - assets/wallpaper/วอลการ์ตูน-4.jpg
+    - assets/wallpaper/วอลการ์ตูน-5.jpg
+    - assets/wallpaper/วอลการ์ตูน-6.jpg
+    - assets/wallpaper/วอลการ์ตูน-7.jpg
+    - assets/wallpaper/วอลการ์ตูน-8.jpg
+    - assets/wallpaper/วอลการ์ตูน-9.jpg
+    - assets/wallpaper/ดาวจันทร์.jpg
+    - assets/wallpaper/ดาวพฤหัส.jpg
+    - assets/wallpaper/ดาวพุธ.jpg
+    - assets/wallpaper/ดาวศุกร์.jpg
+    - assets/wallpaper/ดาวเสาร์.jpg
+    - assets/wallpaper/ดาวอังคาร.jpg
+    - assets/wallpaper/ดาวอาทิตย์.jpg
+    - assets/wallpaper/ทาโรต์-1.png
+    - assets/wallpaper/ทาโรต์-2.png
+    - assets/wallpaper/ทาโรต์-3.png
+    - assets/wallpaper/ทาโรต์-4.png
+    - assets/wallpaper/ทาโรต์-5.png
+    - assets/wallpaper/ทาโรต์-6.png
+    - assets/wallpaper/ทาโรต์-7.png
+    - assets/wallpaper/ทาโรต์-8.png
+    - assets/wallpaper/ทาโรต์-9.png
+    - assets/wallpaper/ทาโรต์-10.png
+    - assets/wallpaper/ท้าวเวส-สี-1.jpg
+    - assets/wallpaper/ท้าวเวส-สี-2.jpg
+    - assets/wallpaper/ท้าวเวส-สี-3.jpg
+    - assets/wallpaper/ท้าวเวส-สี-4.jpg
+    - assets/wallpaper/ท้าวเวส-สี-5.jpg
+    - assets/wallpaper/ท้าวเวส-สี-6.jpg
+    - assets/wallpaper/ท้าวเวส-สี-7.jpg
+    - assets/wallpaper/พระแม่-1.jpg
+    - assets/wallpaper/พระแม่-2.jpg
+    - assets/wallpaper/พระแม่-3.jpg
+    - assets/wallpaper/พระแม่-4.jpg
+    - assets/wallpaper/พระแม่-5.jpg
+    - assets/wallpaper/พระแม่-6.jpg
+    - assets/wallpaper/พระแม่-7.jpg
+    - assets/wallpaper/พระแม่-8.jpg
+    - assets/wallpaper/พระแม่-9.jpg
+    - assets/wallpaper/พระแม่-10.jpg
+    - assets/wallpaper/พระแม่-11.jpg
+    - assets/wallpaper/พระแม่-12.jpg
+    - assets/wallpaper/เรียน-1.png
+    - assets/wallpaper/เรียน-2.png
+    - assets/wallpaper/เรียน-3.png
+    - assets/wallpaper/เรียน-4.png
+    - assets/wallpaper/เรียน-5.png
+    - assets/wallpaper/เรียน-6.png
+    - assets/wallpaper/เรียน-7.png
+    - assets/wallpaper/เรียน-8.png
+    - assets/wallpaper/เรียน-9.png
+    - assets/wallpaper/เรียน-10.png
+    - assets/wallpaper/เรียน-11.png
+    - assets/wallpaper/เรียน-12.png
+    - assets/wallpaper/วันจันทร์-1.jpg
+    - assets/wallpaper/วันพฤหัส-1.jpg
+    - assets/wallpaper/วันพุธ-1.jpg
+    - assets/wallpaper/วันศุกร์-1.jpg
+    - assets/wallpaper/วันเสาร์-1.jpg
+    - assets/wallpaper/วันอังคาร-1.jpg
+    - assets/wallpaper/วันอาทิตย์-1.jpg
