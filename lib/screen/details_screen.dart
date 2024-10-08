@@ -11,8 +11,39 @@ class DetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final selectedItem = itemData.firstWhere(
       (element) => element.name == item,
-      orElse: () => Item('Unknown', 'Details not found', '','','',''), // Default item if not found
+      orElse: () => Item('Unknown', 'Details not found', '','','','','','','','',''), // Default item if not found
     );
+
+    // Reusable method to create image and text rows
+    Widget buildImageTextRow(String imagePath, String text) {
+      return Row(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(12),
+            child: Image.asset(
+              imagePath,
+              height: 100,
+              fit: BoxFit.cover,
+            ),
+          ),
+          const SizedBox(width: 16),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  text,
+                  style: const TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      );
+    }
 
     return Structure(
       body: Container(
@@ -50,7 +81,7 @@ class DetailsScreen extends StatelessWidget {
                   child: Text(
                     selectedItem.name,
                     style: const TextStyle(
-                      fontSize: 32,
+                      fontSize: 30,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
@@ -60,149 +91,74 @@ class DetailsScreen extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 16),
-            Container(
-              height: 600,
-              padding: const EdgeInsets.all(16.0),
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    Color(0xFF000000),
-                    Color(0xFF737373),
-                  ],
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
+
+            // Main content container with Scrollbar and SingleChildScrollView
+            Expanded(
+              child: Scrollbar(
+                thumbVisibility: true, // Makes the scrollbar visible
+                child: SingleChildScrollView(
+                  child: Container(
+                    padding: const EdgeInsets.all(24.0), // Adjusted padding here for bigger space
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [
+                          const Color(0xFF000000),
+                          const Color(0xFF737373), // Your preferred color
+                        ],
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                      ),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Column(
+                      children: [
+                        // First Row: Picture and Details in a Column
+                        Column(
+                          children: [
+                            // Image at the top
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(12),
+                              child: Image.asset(
+                                selectedItem.picture,
+                                height: 150,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            const SizedBox(height: 16), // Spacing between image and details
+
+                            // Details below the image
+                            SingleChildScrollView(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    selectedItem.details,
+                                    style: const TextStyle(
+                                      fontSize: 18,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 16),
+
+                        // Second Row: First Additional Picture and Address1
+                        buildImageTextRow(selectedItem.picture, selectedItem.address1),
+                        const SizedBox(height: 16),
+
+                        // Third Row: Second Additional Picture and Address2
+                        buildImageTextRow(selectedItem.picture, selectedItem.address2),
+                        const SizedBox(height: 16),
+
+                        // Fourth Row: Third Additional Picture and Address3
+                        buildImageTextRow(selectedItem.picture, selectedItem.address3),
+                      ],
+                    ),
+                  ),
                 ),
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Column(
-                children: [
-                  // First Row: Picture and Details
-                  Row(
-                    children: [
-                      // Image on the left
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(12),
-                        child: Image.asset(
-                          selectedItem.picture,
-                          height: 150,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      const SizedBox(width: 16),
-                      Expanded(
-                        child: SingleChildScrollView(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                selectedItem.details,
-                                style: const TextStyle(
-                                  fontSize: 20,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 16),
-
-                  // Second Row: First Additional Picture
-                  Row(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(12),
-                        child: Image.asset(
-                          selectedItem.picture,
-                          height: 100,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      const SizedBox(width: 16),
-                      Expanded(
-                        child: SingleChildScrollView(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                selectedItem.address1,
-                                style: const TextStyle(
-                                  fontSize: 20,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 16),
-
-                  // Third Row: Second Additional Picture
-                  Row(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(12),
-                        child: Image.asset(
-                          selectedItem.picture, 
-                          height: 100,
-                          fit: BoxFit.cover, 
-                        ),
-                      ),
-                      const SizedBox(width: 16), 
-                      Expanded(
-                        child: SingleChildScrollView( 
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                selectedItem.address2, 
-                                style: const TextStyle(
-                                  fontSize: 20,
-                                  color: Colors.white, // Changed to white for better contrast
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 16),
-                  Row(
-                    children: [
-                      // Image on the left
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(12), 
-                        child: Image.asset(
-                          selectedItem.picture,
-                          height: 100,
-                          fit: BoxFit.cover, 
-                        ),
-                      ),
-                      const SizedBox(width: 16),
-                      Expanded(
-                        child: SingleChildScrollView( 
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                selectedItem.address3,
-                                style: const TextStyle(
-                                  fontSize: 20,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
               ),
             ),
           ],

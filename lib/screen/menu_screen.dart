@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:khongmongkol/screen/home_screen.dart';
 import 'package:khongmongkol/screen/structure.dart';
 import 'package:khongmongkol/screen/gaw_screen.dart';
+import 'package:khongmongkol/screen/birthdaySearch_screen.dart';
 
 class MenuScreen extends StatefulWidget {
   const MenuScreen({super.key});
@@ -11,14 +12,17 @@ class MenuScreen extends StatefulWidget {
 }
 
 class _MenuScreenState extends State<MenuScreen> {
-  void bd_kmk() {
-    print("Birthday KMK");
-  }
-
   void gaw_wallpaper() {
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => GawScreen()),
+    );
+  }
+
+  void bd_kmk() {
+  Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => birthdaySearch()),
     );
   }
 
@@ -45,31 +49,32 @@ class _MenuScreenState extends State<MenuScreen> {
                   // Back Button
                   Row(
                     children: [
-                  Container(
-                    width: 40,
-                    height: 40,
-                    color: const Color(0xFF8B5F32),
-                    child: IconButton(
-                      icon: const Icon(
-                        Icons.keyboard_arrow_left,
-                        color: Color.fromARGB(255, 255, 255, 255),
+                      Container(
+                        width: 40,
+                        height: 40,
+                        color: const Color(0xFF8B5F32),
+                        child: IconButton(
+                          icon: const Icon(
+                            Icons.keyboard_arrow_left,
+                            color: Color.fromARGB(255, 255, 255, 255),
+                          ),
+                          onPressed: () {
+                            Navigator.of(context).pop(); // นำทางกลับ
+                          },
+                        ),
                       ),
-                      onPressed: () {
-                        Navigator.of(context).pop(); // นำทางกลับ
-                      },
-                    ),
-                  ),
-                  
-                  const SizedBox(
-                      width: 8), // เพิ่มระยะห่างระหว่างไอคอนและข้อความ
-                  const Text(
-                    'Back',
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 255, 255, 255), // สีข้อความ
-                      fontSize: 20,
-                    ),
-                  ),
-                  ],
+
+                      const SizedBox(
+                          width: 8), // เพิ่มระยะห่างระหว่างไอคอนและข้อความ
+                      const Text(
+                        'Back',
+                        style: TextStyle(
+                          color:
+                              Color.fromARGB(255, 255, 255, 255), // สีข้อความ
+                          fontSize: 20,
+                        ),
+                      ),
+                    ],
                   ),
                   const SizedBox(height: 20),
 
@@ -146,7 +151,8 @@ class _MenuScreenState extends State<MenuScreen> {
                       child: TextButton(
                         onPressed: gaw_wallpaper,
                         style: TextButton.styleFrom(
-                          padding: const EdgeInsets.all(10), // Remove default padding
+                          padding: const EdgeInsets.all(
+                              10), // Remove default padding
                           textStyle:
                               const TextStyle(fontSize: 18), // Button text size
                         ),
