@@ -32,6 +32,9 @@ dependencies:
     sdk: flutter
   carousel_slider: ^5.0.0
   shared_preferences: ^2.0.6
+  url_launcher: ^6.3.1
+  permission_handler: ^10.0.0
+  webview_flutter: ^4.8.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -41,6 +44,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  google_maps_flutter: ^2.2.0
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -192,3 +196,131 @@ flutter:
     - assets/fri.png
     - assets/sat.png
     - assets/sun.png
+    #monday
+    - assets/monday/plant/โป๊ยเซียน.png
+    - assets/monday/plant/มะพร้าว.png
+    - assets/monday/plant/ว่านมหาลาภ.png
+    - assets/monday/thing/ปางห้ามญาติ.png
+    - assets/monday/thing/พญาครุฑ.png
+    - assets/monday/thing/พระรอด.png
+    - assets/monday/gem/ทับทิม.png
+    - assets/monday/gem/มูนสโตน.png
+    - assets/monday/gem/โรสควอสซ์.png
+    
+    #tuesday
+    - assets/tuesday/plant/เข็ม.png
+    - assets/tuesday/plant/โป๊ยเซียน.png
+    - assets/tuesday/plant/ว่านมหานิยม.png
+    - assets/tuesday/thing/พระพง.png
+    - assets/tuesday/thing/สมเด็จวัดระฆัง.png
+    - assets/tuesday/thing/องค์พรหม.png
+    - assets/tuesday/gem/พวงชมพู.png
+    - assets/tuesday/gem/เพชร.png
+    - assets/tuesday/gem/มรกต.png
+
+    #wednesday
+    - assets/wednesday/plant/ต้นศุภโชค.jpg
+    - assets/wednesday/plant/ว่านธรณีสาร.jpg
+    - assets/wednesday/plant/ว่านสี่ทิศ.jpg
+    - assets/wednesday/thing/ปางอุ้มบาตร.png
+    - assets/wednesday/thing/พระแก้วมรกต.png
+    - assets/wednesday/thing/หลวงปู่โต_พรหม.png
+    - assets/wednesday/gem/โกเมน.png
+    - assets/wednesday/gem/มรกต.png
+    - assets/wednesday/gem/โอปอล์.png
+
+    #thursday
+    - assets/thursday/plant/ต้นศุภโชค.jpg
+    - assets/thursday/plant/ไผ่.jpg
+    - assets/thursday/plant/ว่านเพชรนารายณ์.jpg
+    - assets/thursday/thing/กรุเตาเรียง.png
+    - assets/thursday/thing/ปู่ฤาษี.png
+    - assets/thursday/thing/พระแม่อุมา.png
+    - assets/thursday/gem/บุษรมคัม.png
+    - assets/thursday/gem/เพชร.png
+    - assets/thursday/gem/ลูกแก้ว.png
+
+    #friday
+    - assets/friday/plant/ต้นกวักมรกต.jpg
+    - assets/friday/plant/ต้นเฟิร์นข้าหลวง.jpg
+    - assets/friday/plant/ว่านเศรษฐีเรือนกลาง.jpg
+    - assets/friday/thing/ปางรำพึง.png
+    - assets/friday/thing/รูปปั้นหนู.png
+    - assets/friday/thing/หลวงปู่โต๊ะ.png
+    - assets/friday/gem/ทอง.png
+    - assets/friday/gem/โมรา.png
+    - assets/friday/gem/อความารีน.png
+    
+
+    #saturday
+    - assets/saturday/plant/ต้นวาสนา.png
+    - assets/saturday/plant/ไผ่มงคล.png
+    - assets/saturday/plant/โมก.png
+    - assets/saturday/thing/พญานาคราช.png
+    - assets/saturday/thing/พระกำแพงว่านหน้าทอง.png
+    - assets/saturday/thing/พระปางนาคปรก.png
+    - assets/saturday/gem/ไทเกอร์อาย.png
+    - assets/saturday/gem/นิลดำ.png
+    - assets/saturday/gem/ออบซิเดียน.png
+
+    #sunday
+    - assets/sunday/plant/ต้นราชพฤกษ์.png
+    - assets/sunday/plant/มะพร้าว.png
+    - assets/sunday/plant/ว่านมหาลาภ.png
+    - assets/sunday/thing/พระแม่อุมาเทวี.png
+    - assets/sunday/thing/พระแก้ว.png
+    - assets/sunday/thing/พระโพธิสัตว์กวนอิม.png
+    - assets/sunday/gem/โกเมน.png
+    - assets/sunday/gem/คาร์เนเลียน.png
+    - assets/sunday/gem/ซันสโตน.png
+
+    - assets/fri_t1_m1.png
+    - assets/fri_t2_m1.png
+    - assets/fri_t3_m1.png
+    - assets/fri_t3_m2.png
+    - assets/fri_t3_m3.png
+
+    - assets/mon_t1_m1.png
+    - assets/mon_t1_m2.png
+    - assets/mon_t2_m1.png
+    - assets/mon_t3_m1.png
+
+    - assets/sat_t1_m1.png
+    - assets/sat_t1_m2.png
+    - assets/sat_t1_m3.png
+    - assets/sat_t2_m1.png
+    - assets/sat_t2_m2.png
+    - assets/sat_t2_m3.png
+    - assets/sat_t3_m1.png
+    - assets/sat_t3_m2.png
+
+    - assets/sun_t1_m1.png
+    - assets/sun_t1_m2.png
+    - assets/sun_t1_m3.png
+    - assets/sun_t2_m1.png
+    - assets/sun_t2_m1.png
+    - assets/sun_t2_m2.png
+    - assets/sun_t2_m3.png
+    - assets/sun_t3_m1.png
+    - assets/sun_t3_m2.png
+    - assets/sun_t3_m3.png
+
+    - assets/thu_t1_m1.png
+    - assets/thu_t2_m1.png
+    - assets/thu_t3_m1.png
+
+    - assets/tue_t1_m1.png
+    - assets/tue_t2_m1.png
+    - assets/tue_t3_m1.png
+    - assets/tue_t3_m2.png
+    - assets/tue_t3_m3.png
+    - assets/tue_t2_m1.png
+    - assets/tue_t1_m1.png
+
+    - assets/wed_t1_m1.png
+    - assets/wed_t2_m1.png
+    - assets/wed_t3_m1.png
+
+
+
+
