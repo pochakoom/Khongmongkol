@@ -47,35 +47,35 @@ class _MenuScreenState extends State<MenuScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   // Back Button
-                  Row(
-                    children: [
-                      Container(
-                        width: 40,
-                        height: 40,
-                        color: const Color(0xFF8B5F32),
-                        child: IconButton(
-                          icon: const Icon(
-                            Icons.keyboard_arrow_left,
-                            color: Color.fromARGB(255, 255, 255, 255),
-                          ),
-                          onPressed: () {
-                            Navigator.of(context).pop(); // นำทางกลับ
-                          },
-                        ),
-                      ),
+                  // Row(
+                  //   children: [
+                  //     Container(
+                  //       width: 40,
+                  //       height: 40,
+                  //       color: const Color(0xFF8B5F32),
+                  //       child: IconButton(
+                  //         icon: const Icon(
+                  //           Icons.keyboard_arrow_left,
+                  //           color: Color.fromARGB(255, 255, 255, 255),
+                  //         ),
+                  //         onPressed: () {
+                  //           Navigator.of(context).pop(); // นำทางกลับ
+                  //         },
+                  //       ),
+                  //     ),
 
-                      const SizedBox(
-                          width: 8), // เพิ่มระยะห่างระหว่างไอคอนและข้อความ
-                      const Text(
-                        'Back',
-                        style: TextStyle(
-                          color:
-                              Color.fromARGB(255, 255, 255, 255), // สีข้อความ
-                          fontSize: 20,
-                        ),
-                      ),
-                    ],
-                  ),
+                  //     const SizedBox(
+                  //         width: 8), // เพิ่มระยะห่างระหว่างไอคอนและข้อความ
+                  //     const Text(
+                  //       'Back',
+                  //       style: TextStyle(
+                  //         color:
+                  //             Color.fromARGB(255, 255, 255, 255), // สีข้อความ
+                  //         fontSize: 20,
+                  //       ),
+                  //     ),
+                  //   ],
+                  // ),
                   const SizedBox(height: 20),
 
                   // First Button วัตถุมงคล

@@ -8,6 +8,7 @@ class Structure extends StatelessWidget {
   final Color? menuIconColor;
   final Color? homeIconColor;
   final Color? searchIconColor;
+  final bool showBackButton; // New parameter to control back button visibility
 
   const Structure({
     super.key,
@@ -15,6 +16,7 @@ class Structure extends StatelessWidget {
     this.menuIconColor,
     this.homeIconColor,
     this.searchIconColor,
+    this.showBackButton = false, // Defaults to false if not provided
   });
 
   void menu(BuildContext context) {
@@ -31,7 +33,7 @@ class Structure extends StatelessWidget {
     );
   }
 
-   void search(BuildContext context) {
+  void search(BuildContext context) {
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => const SearchScreen()),
@@ -50,6 +52,15 @@ class Structure extends StatelessWidget {
             fit: BoxFit.cover,
           ),
           centerTitle: true,
+          leading: showBackButton // Conditionally show back button
+              ? IconButton(
+                  icon: const Icon(Icons.keyboard_arrow_left),
+                  color: Colors.white,
+                  onPressed: () {
+                    Navigator.of(context).pop(); // Navigate back
+                  },
+                )
+              : null, // No back button if showBackButton is false
         ),
       ),
       body: body,
@@ -79,7 +90,7 @@ class Structure extends StatelessWidget {
               iconSize: 40,
               color: searchIconColor ?? Colors.white,
               onPressed: () {
-                 search(context);
+                search(context);
               },
             ),
           ],

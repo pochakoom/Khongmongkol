@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:khongmongkol/screen/structure.dart';
-import 'package:khongmongkol/screen/monday_screen.dart';
-import 'package:khongmongkol/screen/tuesday_screen.dart';
-import 'package:khongmongkol/screen/wednesday_screen.dart';
-import 'package:khongmongkol/screen/thusday_screen.dart';
-import 'package:khongmongkol/screen/friday_screen.dart';
-import 'package:khongmongkol/screen/saturday_screen.dart';
-import 'package:khongmongkol/screen/sunday_screen.dart';
+
 
 class birthdaySearch extends StatefulWidget {
   const birthdaySearch({super.key});
@@ -37,10 +31,7 @@ class _BirthdaySearchState extends State<birthdaySearch> {
           action: SnackBarAction(
             label: 'ดูข้อมูลวันจันทร์',
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const MondayScreen()), // เปิดหน้าจอ BirthScreen
-              );
+              Navigator.pushNamed(context, '/mondayScreen'); // ใช้ pushNamed
             },
           ),
         ),
@@ -53,10 +44,7 @@ class _BirthdaySearchState extends State<birthdaySearch> {
           action: SnackBarAction(
             label: 'ดูข้อมูลวันอังคาร',
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const TuesdayScreen()), // เปิดหน้าจอ BirthScreen
-              );
+              Navigator.pushNamed(context, '/tuesdayScreen'); // ใช้ pushNamed
             },
           ),
         ),
@@ -69,10 +57,7 @@ class _BirthdaySearchState extends State<birthdaySearch> {
           action: SnackBarAction(
             label: 'ดูข้อมูลวันพุธ',
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const WednesdayScreen()), // เปิดหน้าจอ BirthScreen
-              );
+              Navigator.pushNamed(context, '/wednesdayScreen'); // ใช้ pushNamed
             },
           ),
         ),
@@ -85,10 +70,7 @@ class _BirthdaySearchState extends State<birthdaySearch> {
           action: SnackBarAction(
             label: 'ดูข้อมูลวันพฤหัสบดี',
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const ThusdayScreen()), // เปิดหน้าจอ BirthScreen
-              );
+              Navigator.pushNamed(context, '/thursdayScreen'); // ใช้ pushNamed
             },
           ),
         ),
@@ -101,10 +83,7 @@ class _BirthdaySearchState extends State<birthdaySearch> {
           action: SnackBarAction(
             label: 'ดูข้อมูลวันศุกร์',
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const FridayScreen()), // เปิดหน้าจอ BirthScreen
-              );
+              Navigator.pushNamed(context, '/fridayScreen'); // ใช้ pushNamed
             },
           ),
         ),
@@ -117,10 +96,7 @@ class _BirthdaySearchState extends State<birthdaySearch> {
           action: SnackBarAction(
             label: 'ดูข้อมูลวันเสาร์',
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const SaturdayScreen()), // เปิดหน้าจอ BirthScreen
-              );
+              Navigator.pushNamed(context, '/saturdayScreen'); // ใช้ pushNamed
             },
           ),
         ),
@@ -133,10 +109,7 @@ class _BirthdaySearchState extends State<birthdaySearch> {
           action: SnackBarAction(
             label: 'ดูข้อมูลวันอาทิตย์',
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const SundayScreen()), // เปิดหน้าจอ BirthScreen
-              );
+              Navigator.pushNamed(context, '/sundayScreen'); // ใช้ pushNamed
             },
           ),
         ),
@@ -154,12 +127,14 @@ class _BirthdaySearchState extends State<birthdaySearch> {
             fit: BoxFit.cover,
           ),
         ),
+        
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               DropdownButtonFormField<String>(
+                key: const Key('dayDropdown'),
                 hint: const Text(
                   'เลือกวันเกิดของท่าน',
                   style: TextStyle(color: Colors.white),
@@ -206,44 +181,43 @@ class _BirthdaySearchState extends State<birthdaySearch> {
                       padding: const EdgeInsets.symmetric(
                         vertical: 15.0,
                         horizontal: 30.0,
-                      ), // เพิ่ม padding ให้ปุ่มใหญ่ขึ้น
+                      ),
                       backgroundColor: Colors.grey,
                     ),
                     child: const Text(
                       'cancel',
                       style: TextStyle(
-                        fontSize: 18, // เพิ่มขนาดฟอนต์
-                        color: Colors.black, // เปลี่ยนสีฟอนต์
+                        fontSize: 18,
+                        color: Colors.black,
                       ),
                     ),
                   ),
-
-                  //ปุ่ม SEND
                   ElevatedButton(
                     onPressed: () {
-                      if (selectedDay != null) {
+                      if (selectedDay != null && days.contains(selectedDay)) {
+                        
+                        showSuccessSnackBar();
+                      } else {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: const Text('กำลังประมวลผล...'),
-                            duration: const Duration(seconds: 2),
+                          const SnackBar(
+                            content: Text('กรุณาเลือกวันเกิดก่อนกดปุ่มส่ง'),
+                            backgroundColor: Colors.red,
                           ),
                         );
-                        // Logic for processing or navigating
-                        showSuccessSnackBar();
                       }
                     },
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(
                         vertical: 15.0,
                         horizontal: 30.0,
-                      ), // เพิ่ม padding ให้ปุ่มใหญ่ขึ้น
+                      ),
                       backgroundColor: Colors.amber,
                     ),
                     child: const Text(
                       'send',
                       style: TextStyle(
-                        fontSize: 18, // เพิ่มขนาดฟอนต์
-                        color: Colors.black, // เปลี่ยนสีฟอนต์
+                        fontSize: 18,
+                        color: Colors.black,
                       ),
                     ),
                   ),

@@ -75,42 +75,42 @@ class _GawScreenState extends State<GawScreen> {
           ),
 
           // Back Button
-          Align(
-            alignment: Alignment.topLeft,
-            child: Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Row(
-                children: <Widget>[
-                  Container(
-                    width: 40,
-                    height: 40,
-                    color: const Color(0xFF8B5F32),
-                    child: IconButton(
-                      icon: const Icon(
-                        Icons.keyboard_arrow_left,
-                        color: Color.fromARGB(255, 255, 255, 255),
-                      ),
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                    ),
-                  ),
-                  const SizedBox(width: 8),
-                  const Text(
-                    'Back',
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 255, 255, 255),
-                      fontSize: 20,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
+          // Align(
+          //   alignment: Alignment.topLeft,
+          //   child: Padding(
+          //     padding: const EdgeInsets.all(20.0),
+          //     child: Row(
+          //       children: <Widget>[
+          //         Container(
+          //           width: 40,
+          //           height: 40,
+          //           color: const Color(0xFF8B5F32),
+          //           child: IconButton(
+          //             icon: const Icon(
+          //               Icons.keyboard_arrow_left,
+          //               color: Color.fromARGB(255, 255, 255, 255),
+          //             ),
+          //             onPressed: () {
+          //               Navigator.of(context).pop();
+          //             },
+          //           ),
+          //         ),
+          //         const SizedBox(width: 8),
+          //         const Text(
+          //           'Back',
+          //           style: TextStyle(
+          //             color: Color.fromARGB(255, 255, 255, 255),
+          //             fontSize: 20,
+          //           ),
+          //         ),
+          //       ],
+          //     ),
+          //   ),
+          // ),
 
           // Content
           Positioned(
-            top: 60,
+            top: 20,
             left: 0,
             right: 0,
             bottom: 0,
